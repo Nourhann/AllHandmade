@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+<form class="ui form">
+  <h4 class="ui dividing header">Add item</h4>
+  <div class="field">
+    <label>Item Name</label>
+      <div class="field">
+        <input type="text" name="shipping[first-name]" placeholder="First Name">
+      </div>
+  </div>
+  <div class="field">
+    <label>Discription</label>
+    <textarea></textarea>
+  </div>
+  <div class="ui right labeled input">
+  <label for="amount" class="ui label">LE</label>
+  <input type="text" placeholder="Amount" id="amount">
+  <div class="ui basic label"></div>
+</div>
+<br>
+<br>
+<div class="file-loading">
+    <input id="input-dim-1" name="input-dim-1[]" multiple type="file" accept="image/*">
+</div>
+<script>
+$("#input-dim-1").fileinput({
+    uploadUrl: "/file-upload-batch/2",
+    allowedFileExtensions: ["jpg", "png", "gif"],
+    minImageWidth: 50,
+    minImageHeight: 50
+});
+</script>
+</form>
+   
