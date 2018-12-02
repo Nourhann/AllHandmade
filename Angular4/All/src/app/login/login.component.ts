@@ -9,15 +9,27 @@ import { Http } from "@angular/http";
 export class LoginComponent implements OnInit {
   username:String;
   password:String;
+  private http:Http;
   constructor() { }
 
   ngOnInit() {
   }
-Login(e,http:Http){
-    
-     this.username = e.target.elements[0].value;
-     this.password = e.target.elements[1].value;
+Login(input){
+     this.username = input.target.elements[0].value;
+     this.password = input.target.elements[1].value;
     console.log(this.username,this.username);
 
   }
+ChickAuthontication(){
+  //let body = {id: this.username , password:this.password};
+  //return this.http.post('http://localhost:8080/admins/login',JSON.stringify(body)).map(responce=>{
+    //let result = responce.json();
+    //if(result){
+      //localStorage.setItem('id',result);
+     // return true;
+    //}
+    ///return false;
+  //console.log(responce.json());
+ // });
+}
 }

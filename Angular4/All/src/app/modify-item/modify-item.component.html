@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+<div *ngFor="let item of items" class="ui relaxed divided list">
+  <div class="item">
+    <div class="content">
+      <a class="header">{{item.name}} / {{item.id}}</a>
+      <div class="description">Updated 10 mins ago</div>
+      <br>
+      <button class="ui red button">Delete</button>
+    </div>
+  </div>

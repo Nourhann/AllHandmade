@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { HttpClientModule } from "@angular/common/http";
+import { ModifyItemComponent } from './modify-item/modify-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from "@angular/common/http";
     CardComponent,
     HomeComponent,
     NavBarComponent,
-    AddItemComponent
+    AddItemComponent,
+    ModifyItemComponent
   ],
   imports: [
     BrowserModule,
