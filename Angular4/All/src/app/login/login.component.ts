@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: 'app-login',
@@ -21,15 +22,15 @@ Login(input){
 
   }
 ChickAuthontication(){
-  //let body = {id: this.username , password:this.password};
-  //return this.http.post('http://localhost:8080/admins/login',JSON.stringify(body)).map(responce=>{
-    //let result = responce.json();
-    //if(result){
-      //localStorage.setItem('id',result);
-     // return true;
-    //}
-    ///return false;
-  //console.log(responce.json());
- // });
+  let body = {id: this.username , password:this.password};
+  return this.http.post(environment.loginUrl,JSON.stringify(body)).map(responce=>{
+    let result = responce.json();
+    if(result){
+      localStorage.setItem('id',result);
+      return true;
+    }
+    return false;
+  console.log(responce.json());
+  });
 }
 }

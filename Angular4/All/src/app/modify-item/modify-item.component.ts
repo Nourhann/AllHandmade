@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: 'app-modify-item',
@@ -7,16 +8,21 @@ import { Http } from "@angular/http";
   styleUrls: ['./modify-item.component.css']
 })
 export class ModifyItemComponent implements OnInit {
-  private items:any;
-  constructor(http:Http) {
+  private items:any[];
+  constructor(private http:Http) {
 
-     http.get('http://localhost:8080/items/').subscribe(response => {
+     http.get(environment.getItemUrl).subscribe(response => {
       this.items=response.json();
       console.log(response.json());
     });
 
   }
-
+  deleteitem(item){
+    this.http.delete(environment.getItemUrl+item.id).subscribe(responce=>{
+      let index = this.items.indexOf(item);
+      this.items.splice(index,1);
+    })
+  }
   ngOnInit() {
   }
 

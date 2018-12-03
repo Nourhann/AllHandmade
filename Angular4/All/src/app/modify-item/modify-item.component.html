@@ -3,8 +3,8 @@
   <div class="item">
     <div class="content">
       <a class="header">{{item.name}} / {{item.id}}</a>
-      <div class="description">Updated 10 mins ago</div>
+      <div class="description">{{item.discription}}</div>
       <br>
-      <button class="ui red button">Delete</button>
+      <button (click)="deleteitem(item)" class="ui red button">Delete</button>
     </div>
   </div>
