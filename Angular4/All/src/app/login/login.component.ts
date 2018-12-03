@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
 import { environment } from "src/environments/environment";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,8 @@ import { environment } from "src/environments/environment";
 export class LoginComponent implements OnInit {
   username:String;
   password:String;
+  invalid:Boolean;
+  router:Router;
   private http:Http;
   constructor() { }
 
@@ -27,10 +30,10 @@ ChickAuthontication(){
     let result = responce.json();
     if(result){
       localStorage.setItem('id',result);
-      return true;
+      this.router.navigate(['/']);
     }
-    return false;
-  console.log(responce.json());
+    this.invalid=true;
+   //console.log(responce.json());
   });
 }
 }
